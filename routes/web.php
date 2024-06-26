@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// GET POST => method HTTP
+// slug 
+  Route::get('/test',function(){
+    echo 'Danh sách sản phẩm';
+  });
+
+  Route::get('/list-user',[UserController::class,'showUser']);
+
+ // Parmams va Slug 
+//slug
+ Route::get('/get-user/{id}/{name?}',[UserController::class,'getUser']);
+// Parmas
+Route::get('/update-user',[UserController::class,'updateUser']);
+// SINHVIEN 
+Route::get('/sinhvien',[UserController::class,'thongtinSV']);
