@@ -29,3 +29,15 @@ use App\Http\Controllers\UserController;
 Route::get('/update-user',[UserController::class,'updateUser']);
 // SINHVIEN 
 Route::get('/sinhvien',[UserController::class,'thongtinSV']);
+
+//
+Route::group(['prefix' => 'users' ,'as' => 'users.'],function() {
+
+  Route::get('list-users',[UserController::class,'listUsers']) ->name('listUsers');
+
+  Route::get('add-users',[UserController::class,'addUsers']) ->name('addUsers');
+
+  Route::post('add-users',[UserController::class,'postUsers']) ->name('postUsers');
+
+  Route::get('delete-user/{idUser}',[UserController::class,'deleteUser']) ->name('deleteUser');
+});
