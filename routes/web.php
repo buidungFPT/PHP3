@@ -40,4 +40,8 @@ Route::group(['prefix' => 'users' ,'as' => 'users.'],function() {
   Route::post('add-users',[UserController::class,'postUsers']) ->name('postUsers');
 
   Route::get('delete-user/{idUser}',[UserController::class,'deleteUser']) ->name('deleteUser');
+
+  Route::get('edit-user/{idUser}',[UserController::class,'editUsers']) ->name('editUsers');
+
+  Route::post('update-user/{idUser}',[UserController::class,'updateUsers']) ->name('updateUsers');
 });

@@ -181,4 +181,25 @@ public function deleteUser($idUser){
    DB::table('users')->where('id',$idUser)->delete();
    return redirect()->route('users.listUsers');
 }
+public function editUsers($idUser){
+    $phongban = DB::table('phongban')->select('id','ten_donvi')->get();
+    $user = DB::table('users')->where('id',$idUser)->first();
+    return view('users/editUsers')->with([
+        'phongBan' => $phongban,
+        'user' => $user
+    ]);
+}
+public function updateUsers(Request $req ,$idUser){
+        $data=[
+                'name' => $req->nameUsers,
+                'email' => $req->emailUsers,
+                'phongban_id' => $req->phongbanUser,
+                'tuoi' => $req->tuoiUsers,
+               
+                'updated_at' => Carbon::now(),
+        ];
+        DB::table('users')->where('id',$idUser)->update($data);
+        return redirect()->route('users.listUsers');
+
+}
 }
