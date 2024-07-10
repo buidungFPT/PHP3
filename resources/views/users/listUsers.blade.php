@@ -32,12 +32,12 @@
                 <td> {{$value->email}} </td>
                 <td> {{$value->tuoi}} </td>
                 <td> {{$value->ten_donvi}} </td>
-                <td class="btn btn dange">
-                    <a href="{{ route('users.deleteUser',$value->id)}}"   
+                <td >
+                    <a href="{{ route('users.deleteUser',$value->id)}}" class="btn btn-danger"  
                     onclick="return confirm('Are you sure you want to delete?');" >
                     XOA</a>
 
-                <a href="{{ route('users.editUsers',$value->id)}}" > SUA</a>
+                <a href="{{ route('users.editUsers',$value->id)}}" class="btn btn-success" > SUA</a>
                 </td>
                
             </tr>
@@ -45,5 +45,5 @@
         </tbody>
     </table>
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
