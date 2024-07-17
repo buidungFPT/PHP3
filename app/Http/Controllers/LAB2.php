@@ -69,5 +69,9 @@ public function searchProduct(Request $req){
     ->get();
     return view('lab2/listUser')->with(['listUser' => $listProduct]);
 }
+
+public function test(){
+ return view('admin/products/list-pro');
+}
  }
 ?>

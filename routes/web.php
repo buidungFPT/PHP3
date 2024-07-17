@@ -62,3 +62,5 @@ Route::group(['prefix' => 'product' ,'as' => 'product.'],function() {
 
   Route::get('search-product',[LAB2::class,'searchProduct']) ->name('searchProduct');
 });
+
+Route::get('test',[LAB2::class,'test']) ;
